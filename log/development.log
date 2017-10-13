@@ -2868,3 +2868,123 @@ Processing by RailsAdmin::MainController#index as HTML
 Completed 200 OK in 124ms (Views: 106.7ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-10-13 14:44:56 -0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by RailsAdmin::MainController#dashboard as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients" WHERE "clients"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" ORDER BY "clients"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comissions" WHERE "comissions"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mComission Load (0.2ms)[0m  [1m[34mSELECT  "comissions".* FROM "comissions" ORDER BY "comissions"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "discounts" WHERE "discounts"."status" = ?[0m  [["status", 0]]
+  [1m[36mDiscount Load (0.2ms)[0m  [1m[34mSELECT  "discounts".* FROM "discounts" ORDER BY "discounts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products" WHERE "products"."status" = ?[0m  [["status", 0]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "sales" WHERE "sales"."user_id" = ?[0m  [["user_id", 1]]
+  [1m[36mSale Load (0.2ms)[0m  [1m[34mSELECT  "sales".* FROM "sales" ORDER BY "sales"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/dashboard.html.haml within layouts/rails_admin/application (38.9ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (13.0ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (29.0ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (20.9ms)
+  Rendering /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (16.2ms)
+Completed 200 OK in 1523ms (Views: 682.7ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/sale?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-10-13 14:45:03 -0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"sale"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax
+  [1m[36mSale Load (0.3ms)[0m  [1m[34mSELECT  "sales".* FROM "sales" WHERE "sales"."user_id" = ? ORDER BY sales.id desc LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 20], ["OFFSET", 0]]
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/pjax (65.3ms)
+Completed 200 OK in 128ms (Views: 87.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/sale/new?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2017-10-13 14:45:04 -0300
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "model_name"=>"sale"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "clients"[0m
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."user_id" = ? ORDER BY clients.id desc[0m  [["user_id", 1]]
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_filtering_select.html.haml (17.0ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_datetime.html.haml (6.9ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "discounts"[0m
+  [1m[36mDiscount Load (0.3ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."status" = ? ORDER BY discounts.id desc[0m  [["status", 0]]
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_filtering_select.html.haml (6.4ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_text.html.haml (2.7ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "product_quantities"[0m
+  [1m[36mProductQuantity Load (0.2ms)[0m  [1m[34mSELECT "product_quantities".* FROM "product_quantities" WHERE "product_quantities"."user_id" = ? ORDER BY product_quantities.id desc[0m  [["user_id", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 2[0m
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_filtering_multiselect.html.haml (44.9ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (4.1ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_submit_buttons.html.haml (12.8ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/new.html.haml within layouts/rails_admin/pjax (122.6ms)
+Completed 200 OK in 169ms (Views: 142.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/product_quantity/new?modal=true" for 127.0.0.1 at 2017-10-13 14:45:12 -0300
+Processing by RailsAdmin::MainController#new as JS
+  Parameters: {"modal"=>"true", "model_name"=>"product_quantity"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/new.html.haml
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."status" = ? ORDER BY products.id desc[0m  [["status", 0]]
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_filtering_select.html.haml (14.8ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (3.3ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_form_field.html.haml (0.6ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/_submit_buttons.html.haml (25.2ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/new.html.haml (65.7ms)
+Completed 200 OK in 84ms (Views: 67.5ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/product_quantity/new" for 127.0.0.1 at 2017-10-13 14:45:18 -0300
+Processing by RailsAdmin::MainController#new as JS
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9GrDCGz9rMZJ/4kjaJZnno8cN8vWXnNZezqq84wrD8nOnM5+xS1WsESPq0ywMVQei5PrkDpLM59Apkq3YntPKw==", "product_quantity"=>{"product_id"=>"2", "quantity"=>"3", "user_id"=>"1"}, "model_name"=>"product_quantity"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "product_quantities" ("product_id", "quantity", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["product_id", 2], ["quantity", 3], ["user_id", 1], ["created_at", "2017-10-13 17:45:18.933614"], ["updated_at", "2017-10-13 17:45:18.933614"]]
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+Completed 200 OK in 55ms (Views: 0.7ms | ActiveRecord: 18.7ms)
+
+
+Started POST "/sale/new" for 127.0.0.1 at 2017-10-13 14:45:22 -0300
+Processing by RailsAdmin::MainController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"D/gKdVUoNQUr5E8DPXnrp3+UzXQ6mG9+kYsaX0jZgzsOLyjyrYKE0TzaUbqU3AMdRbp6yXYpZ/DJZe6eqU/Mtg==", "sale"=>{"client_id"=>"2", "sale_date"=>"October 13, 2017", "discount_id"=>"2", "notes"=>"Venda", "product_quantity_ids"=>["", "", "2"], "user_id"=>"1"}, "return_to"=>"http://localhost:3000/sale", "_save"=>"", "model_name"=>"sale"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProductQuantity Load (0.5ms)[0m  [1m[34mSELECT "product_quantities".* FROM "product_quantities" WHERE "product_quantities"."id" = 2[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mDiscount Load (0.3ms)[0m  [1m[34mSELECT  "discounts".* FROM "discounts" WHERE "discounts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "sales" ("client_id", "sale_date", "user_id", "discount_id", "notes", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["client_id", 2], ["sale_date", "2017-10-13"], ["user_id", 1], ["discount_id", 2], ["notes", "Venda"], ["created_at", "2017-10-13 17:45:22.746408"], ["updated_at", "2017-10-13 17:45:22.746408"]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "product_quantities" SET "sale_id" = ?, "updated_at" = ? WHERE "product_quantities"."id" = ?[0m  [["sale_id", 1], ["updated_at", "2017-10-13 17:45:22.751160"], ["id", 2]]
+  [1m[36mComission Load (0.3ms)[0m  [1m[34mSELECT  "comissions".* FROM "comissions" WHERE "comissions"."sale_id" = ? LIMIT ?[0m  [["sale_id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "comissions" ("sale_id", "value", "user_id", "status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["sale_id", 1], ["value", 6.0], ["user_id", 1], ["status", 0], ["created_at", "2017-10-13 17:45:22.778753"], ["updated_at", "2017-10-13 17:45:22.778753"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/sale
+Completed 302 Found in 86ms (ActiveRecord: 12.3ms)
+
+
+Started GET "/sale" for 127.0.0.1 at 2017-10-13 14:45:22 -0300
+Processing by RailsAdmin::MainController#index as HTML
+  Parameters: {"model_name"=>"sale"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application
+  [1m[36mSale Load (0.3ms)[0m  [1m[34mSELECT  "sales".* FROM "sales" WHERE "sales"."user_id" = ? ORDER BY sales.id desc LIMIT ? OFFSET ?[0m  [["user_id", 1], ["LIMIT", 20], ["OFFSET", 0]]
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."id" = 2[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+  [1m[36mDiscount Load (0.4ms)[0m  [1m[34mSELECT "discounts".* FROM "discounts" WHERE "discounts"."id" = 2[0m
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/rails_admin/main/index.html.haml within layouts/rails_admin/application (85.6ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_secondary_navigation.html.haml (6.8ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_navigation.html.haml (15.3ms)
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/_sidebar_navigation.html.haml (10.2ms)
+  Rendering /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml
+  Rendered /home/ricardo/.rvm/gems/ruby-2.4.2/gems/rails_admin-1.2.0/app/views/layouts/rails_admin/pjax.html.haml (10.4ms)
+Completed 200 OK in 303ms (Views: 283.5ms | ActiveRecord: 1.7ms)
+
+
