@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
+gem 'rails_admin_rollincode', :git => 'git@github.com:RicardodeOliveira/rollincode_custom.git'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
@@ -23,6 +23,8 @@ gem 'devise'
 gem 'cancancan'
 gem 'better_errors', '~> 2.3'
 gem 'carrierwave'
+gem 'prawn-rails'
+gem 'gruff'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks

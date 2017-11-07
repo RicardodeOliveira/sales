@@ -1,5 +1,17 @@
 RailsAdmin.config do |config|
 
+  require Rails.root.join('lib', 'rails_admin', 'rails_admin_pdf.rb')
+  RailsAdmin::Config::Actions.register(RailsAdmin::Config::Actions::Pdf)
+
+  config.main_app_name = ["Representantes | ", "Nerd da Stampa"]
+
+  config.navigation_static_links = {
+  'Facebook' => 'https://facebook.com',
+  'Instagram' => 'https://instagram.com/'
+  }
+
+  config.navigation_static_label = "Lins Úteis"
+
   ### Popular gems integration
 
   ## == Devise ==
@@ -24,6 +36,7 @@ RailsAdmin.config do |config|
   # config.show_gravatar true
 
   config.model Sale do
+    navigation_icon 'fa fa-money'
     create do
       field  :client
       field  :sale_date
@@ -102,6 +115,37 @@ RailsAdmin.config do |config|
     end
   end
 
+
+
+  config.model Discount do
+    navigation_icon 'fa fa-percent'
+    parent Product
+  end
+
+  config.model Product do
+    navigation_icon 'fa fa-product-hunt'
+  end
+
+  config.model User do
+    navigation_icon 'fa fa-user'
+  end
+
+  config.model Sale do
+    parent User
+    weight -2
+  end
+
+  config.model Comission do
+    navigation_icon 'fa fa-folder'
+    parent User
+    weight -1
+  end
+
+  config.model Client do
+    navigation_icon 'fa fa-user-circle-o'
+    parent User
+  end
+
   config.model ProductQuantity do
     visible false
   end
@@ -135,6 +179,9 @@ RailsAdmin.config do |config|
     edit
     delete
     show_in_app
+    pdf do
+      only User
+    end
 
     ## With an audit adapter, you can add:
     # history_index
